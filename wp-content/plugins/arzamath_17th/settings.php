@@ -78,7 +78,11 @@ if(!class_exists('arzamath_17th_Settings'))
             // Get the value of this setting
             $value = get_option($field);
             // echo a proper input type="text"
-            echo sprintf('<select name="%s" id="%s" value="%s" />', $field, $field, $value);
+            echo sprintf('<select name="setting_b" id="setting_b">
+							<option value="0">Значение 1</option>
+							<option value="1">Значение 2</option>
+							<option value="2">Значение 3</option>
+						</select>', $field, $field, $value);
         } // END public function settings_field_input_text($args)
 		
         /**

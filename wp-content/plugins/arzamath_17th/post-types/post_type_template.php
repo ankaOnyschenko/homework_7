@@ -6,11 +6,9 @@ if(!class_exists('Post_Type_Template'))
 	{
 		const POST_TYPE	= "new post type";
 		private $_meta	= array(
-			'meta_1',
 			'meta_a',
 			'meta_b',
 			'meta_c',
-			'meta_d',
 		);
     	public function __construct()
     	{

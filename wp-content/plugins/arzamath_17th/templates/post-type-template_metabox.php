@@ -2,23 +2,35 @@
 	<table> 
 		<tr valign="top">
 			<th class="metabox_label_column">
-				<label for="meta_1">Введите текст</label>
+				<label for="meta_a">Введите текст:</label>
 			</th>
 			<td>
-				<input type="text" id="meta_1" name="meta_1" value="<?php echo @get_post_meta($post->ID, 'meta_1', true); ?>" />
+				<input type="text" id="meta_a" name="meta_a" value="<?php echo @get_post_meta($post->ID, 'meta_a', true); ?>" />
 			</td>
 		</tr>               
 			<th class="metabox_label_column">
 				<label>Виберите вариант(ы):</label>
 			</th>
 			<td>
-				<select multiple>
-					<option id="meta_a" name="meta_a" value="<?php echo @get_post_meta($post->ID, 'meta_a', true); ?>">Вариант A</option>
-					<option id="meta_b" name="meta_b" value="<?php echo @get_post_meta($post->ID, 'meta_b', true); ?>">Вариант B</option>
-					<option id="meta_c" name="meta_c" value="<?php echo @get_post_meta($post->ID, 'meta_c', true); ?>">Вариант C</option>
-					<option id="meta_d" name="meta_d" value="<?php echo @get_post_meta($post->ID, 'meta_d', true); ?>">Вариант D</option>
+				<select name="Meta_B" id="meta_b" size="2" multiple>
+					<option id="option_a" name="option_a" value="<?php echo @get_post_meta($post->ID, 'meta_b', true); ?>">Вариант A</option>
+					<option id="option_b" name="option_b" value="<?php echo @get_post_meta($post->ID, 'meta_b', true); ?>">Вариант B</option>
+					<option id="option_c" name="option_c" value="<?php echo @get_post_meta($post->ID, 'meta_b', true); ?>">Вариант C</option>
+					<option id="option_d" name="option_d" value="<?php echo @get_post_meta($post->ID, 'meta_b', true); ?>">Вариант D</option>
 				</select>
 			</td>
+		<tr valign="top">
+			<th class="metabox_label_column">
+				<label for="meta_c">Загрузить изображение:</label>
+			</th>
+			<td>
+				<form enctype="multipart/form-data" action="../post-types/post_type_template.php" method="POST">
+					<input type="hidden" id="img" accept="image/*" />
+					<input type="file" id="userimg"  />
+					<input type="submit" value="Отправить" />
+				</form>
+			</td>
+		</tr>
 	</table>
 </form>
 
