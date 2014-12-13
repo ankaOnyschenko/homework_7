@@ -24,5 +24,5 @@
 		'id' => 'sidebar',
 		'description' => 'поле',
 	));
-
+	
 

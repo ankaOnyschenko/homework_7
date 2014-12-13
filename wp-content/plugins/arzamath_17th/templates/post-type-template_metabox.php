@@ -25,12 +25,17 @@
 			</th>
 			<td>
 				<form enctype="multipart/form-data" action="../post-types/post_type_template.php" method="POST">
-					<input type="hidden" id="img" accept="image/*" />
-					<input type="file" id="userimg"  />
-					<input type="submit" value="Отправить" />
+					<input type="file" id="userimg" accept="image/*"  />
 				</form>
 			</td>
 		</tr>
+		<tr valign="top">
+        <td>
+            <input type="button" id="button"  value="Сохранить" onclick="buttonClick()" />
+        </td>
+    </tr>
 	</table>
 </form>
+
+
 

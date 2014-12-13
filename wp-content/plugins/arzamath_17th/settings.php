@@ -115,3 +115,4 @@ if(!class_exists('arzamath_17th_Settings'))
         } // END public function plugin_settings_page()
     } // END class WP_Plugin_Template_Settings
 } // END if(!class_exists('WP_Plugin_Template_Settings'))
+

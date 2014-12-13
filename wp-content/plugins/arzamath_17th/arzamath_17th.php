@@ -77,3 +77,42 @@ if(class_exists('arzamath_17th'))
 	// instantiate the plugin class
 	$arzamath_17th = new arzamath_17th();
 }
+
+add_action( 'admin_footer', 'wp_action_javascript' );
+function wp_action_javascript() {
+    ?>
+
+    <script type="text/javascript">
+        jQuery (function buttonClick ($) {
+            $(" #button ").click( function () {
+                $a = $( " #meta_a " ).val();
+                $b = $( " #meta_b " ).val();
+                $c = $( " #meta_c " ).val();
+                $d = <?php the_ID(); ?>;
+                var data = {
+                    'action' : 'my_action',
+                    'text'   : $a,
+                    'select' : $b,
+                    'image'  : $c,
+                    'post'   : $d
+                };
+                $.post( ajaxurl, data, function ( response ) {
+                    alert( response );
+                });
+            });
+        });
+    </script>
+
+    <?php
+}
+add_action( 'wp_ajax_my_action', 'wp_action_callback');
+    function wp_action_callback()
+    {
+        global $homework_db;
+        $post_id = $_POST['post'];
+        update_post_meta( $post_id, 'meta_a', $_POST['text']);
+        update_post_meta( $post_id, 'meta_b', $_POST['select']);
+        update_post_meta( $post_id, 'meta_c', $_POST['image']);
+        echo ('Изменения успешно сохранены');
+        die();
+    }  
